@@ -1,12 +1,28 @@
-import Nav from '../components/nav'
+import Nav from "../components/Nav";
+import Sponsors from "../components/Sponsors";
+import Keunggulan from "../components/Keunggulan";
+import Fitur from "../components/Fitur";
+import Monitoring from "../components/Monitoring";
+import FiturMonitoring from "../components/FiturMonitoring";
+import Download from "../components/Download";
+import Peduli from "../components/Peduli";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export default function IndexPage() {
   return (
-    <div>
+    <React.Fragment>
       <Nav />
-      <div className="hero">
-        <h1 className="title">Next.js + Tailwind CSS</h1>
-      </div>
-    </div>
-  )
+      <Header />
+      <Sponsors />
+      <Keunggulan />
+      <Fitur />
+      <Monitoring />
+      <FiturMonitoring />
+      <Download />
+      <Peduli />
+      <Sponsors />
+      <Footer />
+    </React.Fragment>
+  );
 }

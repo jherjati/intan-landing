@@ -1,8 +1,12 @@
 module.exports = {
-  purge: ['./components/**/*.js', './pages/**/*.js'],
+  purge: ["./components/**/*.js", "./pages/**/*.js"],
   theme: {
-    extend: {},
+    extend: {
+      textColor: {
+        nav: "#7592A3",
+      },
+    },
   },
   variants: {},
   plugins: [],
-}
+};
