@@ -122,7 +122,7 @@ const Footer = () => {
           </svg>
         </button>
       </div>
-      <div className='flex justify-between items-center'>
+      <div className='flex lg:flex-row flex-col justify-between items-center'>
         <div>
           <p className='font-sans text-teal-600'>
             <svg
@@ -157,7 +157,7 @@ const Footer = () => {
             info@geocreate.id
           </p>
         </div>
-        <div className='flex '>
+        <div className='flex'>
           <a href='https://braga.co.id' target='_blank'>
             <img src='/Braga.svg' alt='braga' />
           </a>
@@ -167,10 +167,10 @@ const Footer = () => {
         </div>
       </div>
       <div className='flex justify-between'>
-        <p className='font-sans text-teal-600'>
+        <p className='font-sans text-center text-teal-600'>
           © 2020 Indonesia Bertahan, All Right Reserved
         </p>
-        <div className='w-full block flex-grow flex justify-end lg:flex lg:items-center lg:w-auto'>
+        <div className='w-full flex-grow justify-end hidden lg:flex lg:items-center lg:w-auto'>
           {links.map((el, index) => (
             <a
               key={index}

@@ -6,12 +6,27 @@ const FiturMonitoring = () => {
   const [index, setIndex] = React.useState(1);
 
   return (
-    <section className='relative flex justify-between items-center my-20 pl-8'>
-      <div className='flex flex-col my-space'>
-        <p className='text-lg text-blue-500 font-medium'>
+    <section className='relative flex flex-col-reverse lg:flex-row justify-between items-center mt-20 mb-6 lg:pl-8'>
+      <div className='lg:absolute flex space-x-8 my-action mb-10 lg:mb-0'>
+        <button
+          className='cursor-pointer focus:outline-none'
+          onClick={() => setIndex((prev) => (prev ? prev - 1 : 2))}
+        >
+          <PrevButton />
+        </button>
+        <button
+          className='cursor-pointer focus:outline-none'
+          onClick={() => setIndex((prev) => (prev === 2 ? 0 : prev + 1))}
+        >
+          <NextButton />
+        </button>
+      </div>
+
+      <div className='flex flex-col w-11/12 lg:w-1/4 text-center items-center lg:items-start lg:text-left my-6 lg:my-0'>
+        <p className='text-lg text-white lg:text-blue-500 font-medium'>
           Fitur Monitoring Coronaina
         </p>
-        <h5 className='text-4xl text-gray-800 my-1 font-semibold'>
+        <h5 className='text-4xl text-white lg:text-gray-800 my-1 font-semibold'>
           {
             [
               "Sebaran Rumah Sakit",
@@ -20,7 +35,7 @@ const FiturMonitoring = () => {
             ][index]
           }
         </h5>
-        <p className='text-lg text-teal-600 font-light'>
+        <p className='text-lg text-white lg:text-teal-600 font-light'>
           {
             [
               "Memudahkan dalam mencari daftar fasilitas kesehatan yang menjadi rujukan di Indonesia.",
@@ -37,7 +52,18 @@ const FiturMonitoring = () => {
           Kunjungi Peta Sebaran
         </a>
       </div>
-      <img src='/FiturMonitor.svg' alt='fitur monitor' />
+      <img
+        className='hidden lg:block'
+        src='/FiturMonitor.svg'
+        alt='fitur monitor'
+      />
+
+      <img
+        className='absolute bottom-0 lg:hidden w-full'
+        style={{ zIndex: -5, maxHeight: "85%" }}
+        src='/bg-header-mobile.svg'
+        alt='header again'
+      />
       {[0, 1, 2].map((idx) => {
         let transform = "";
         if (idx < index) transform = "translate(10%, 30%) scale(0.25)";
@@ -48,30 +74,20 @@ const FiturMonitoring = () => {
         return (
           <img
             key={idx}
-            className={`absolute transition duration-500 ease-in-out ${
-              idx === index ? "z-20" : "z-10 opacity-50"
+            className={`lg:block lg:absolute transition duration-500 ease-in-out ${
+              idx === index ? "z-20" : "z-10 opacity-50 hidden"
             }`}
-            style={{ right: "6rem", width: "650px", transform }}
+            style={{
+              right: "6rem",
+              width: "650px",
+              maxWidth: "80%",
+              transform,
+            }}
             src={`/Frame${idx}.png`}
             alt='frame'
           />
         );
       })}
-
-      <div className='absolute flex space-x-8 my-action'>
-        <button
-          className='cursor-pointer focus:outline-none'
-          onClick={() => setIndex((prev) => (prev ? prev - 1 : 2))}
-        >
-          <PrevButton />
-        </button>
-        <button
-          className='cursor-pointer focus:outline-none'
-          onClick={() => setIndex((prev) => (prev === 2 ? 0 : prev + 1))}
-        >
-          <NextButton />
-        </button>
-      </div>
 
       <style jsx>{`
         .my-button {
@@ -83,9 +99,6 @@ const FiturMonitoring = () => {
         .my-action {
           right: 4rem;
           bottom: 2rem;
-        }
-        .my-space {
-          max-width: 300px;
         }
       `}</style>
     </section>

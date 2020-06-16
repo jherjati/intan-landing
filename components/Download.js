@@ -4,22 +4,28 @@ import LiveApp from "./LiveApp";
 
 const Download = () => {
   return (
-    <section className='my-4 mx-8 relative flex flex-row-reverse items-center'>
+    <section className='my-4 mx-8 relative flex flex-col-reverse lg:flex-row-reverse items-center'>
       <img
-        className='absolute centered z-0'
+        className='absolute centered z-0 hidden lg:block'
         src='/DownloadSekarang.svg'
         alt='download banner'
       />
 
-      <div className='z-10 pt-20 pr-20' style={{ height: 420, width: "50%" }}>
-        <h5 className='text-white text-3xl font-semibold mb-4'>
+      <img
+        className='z-0 lg:hidden w-full'
+        src='/img-device-download.jpg'
+        alt='download banner'
+      />
+
+      <div className='z-10 pt-20 lg:pr-20 w-full lg:w-2/4 text-center lg:text-left' style={{ height: 420 }}>
+        <h5 className='text-teal-800 lg:text-white text-3xl font-semibold lg:mb-4'>
           Download Aplikasi Intan Sekarang!
         </h5>
-        <p className='text-white text-base font-light'>
+        <p className='text-teal-800 lg:text-white text-base font-light my-4 lg:my-0'>
           Unduh aplikasi intan dan saatnya kita memulai gaya hidup sehat. Intan
           akan membantu dan memberikan informasi untuk melawan pandemi ini.
         </p>
-        <div className='flex space-x-4 mt-6'>
+        <div className='flex space-x-4 lg:mt-6 justify-center lg:justify-start'>
           <a
             className='focus:outline-none'
             href='https://play.google.com/store/apps/details?id=id.braga.intan'

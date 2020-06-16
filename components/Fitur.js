@@ -20,25 +20,27 @@ const Fitur = () => {
   ];
 
   const [index, setIndex] = React.useState(0);
+  const [y, setY] = React.useState(-10);
+
+  React.useEffect(() => {
+    if (window.innerWidth > 1024) setY(-50);
+  }, [setY]);
+
   return (
     <section className='relative w-screen mt-12'>
-      <div className='flex items-center justify-center space-x-40'>
+      <div className='flex lg:flex-row flex-col items-center justify-center space-y-16 lg:space-y-0 lg:space-x-40'>
         {fiturs.map((el, idx) => (
           <div key={idx} style={{ maxWidth: 205 }}>
-            <img src="/ic-bg-benefit.svg" alt="benefits"/>
+            <img src='/ic-bg-benefit.svg' alt='benefits' />
             <h5 className='text-sm font-medium text-gray-800'>{el[0]}</h5>
             <p className='text-xs font-light mt-4 text-teal-800'>{el[1]}</p>
           </div>
         ))}
       </div>
-      
-      <div
-        id='Fitur'
-        className='px-12 my-40 relative w-screen'
-        style={{ height: 400 }}
-      >
+
+      <div id='Fitur' className='py-12 my-20 lg:my-40 relative w-screen'>
         <img
-          className='absolute'
+          className='absolute hidden lg:block'
           style={{
             zIndex: -5,
             top: "50%",
@@ -49,35 +51,43 @@ const Fitur = () => {
           src='/FiturIntanBackground.svg'
           alt='my background'
         />
+        <img
+          className='absolute w-full lg:hidden'
+          style={{ zIndex: -5, bottom: 0 }}
+          src='/bg-header-mobile.svg'
+          alt='mobile bg'
+        />
+
         {["/SS0.png", "/SS1.png", "/SS2.png"].map((el, idx) => {
-          let transform = "translate(-50%, -50%)";
-          if (idx < index) transform = "translate(-80%, -50%) scale(0.5)";
-          if (idx > index) transform = "translate(-20%, -50%) scale(0.5)";
+          let transform = `translate(-50%, ${y}%)`;
+          if (idx < index) transform = `translate(-80%, ${y}%) scale(0.5)`;
+          if (idx > index) transform = `translate(-20%, ${y}%) scale(0.5)`;
           if (idx === 2 && !index)
-            transform = "translate(-80%, -50%) scale(0.5)";
+            transform = `translate(-80%, ${y}%) scale(0.5)`;
           if (index === 2 && !idx)
-            transform = "translate(-20%, -50%) scale(0.5)";
+            transform = `translate(-20%, ${y}%) scale(0.5)`;
           return (
             <img
               key={idx}
-              className={`absolute transition duration-500 ease-in-out ${
-                idx === index ? "z-20" : "opacity-25"
+              className={`relative lg:absolute transition duration-500 ease-in-out ${
+                idx === index ? "z-20" : "opacity-25 hidden lg:block"
               }`}
               style={{
                 top: "50%",
                 left: "50%",
-                height: 600,
+                height: 500,
                 transform,
               }}
               src={el}
-              alt='first ss'
+              alt='just ss'
             />
           );
         })}
-        <div className='flex justify-around items-center h-full w-full'>
-          <div className='w-40 mr-40'>
+
+        <div className='flex lg:flex-row flex-col justify-around items-center text-center h-full w-full'>
+          <div className='w-4/5 lg:w-40 mb-12 lg:mb-0 lg:mr-40'>
             <p className='text-white'>Fitur Intan</p>
-            <p className='text-white font-medium text-lg mt-4 mb-8'>
+            <p className='text-white font-medium text-lg mt-4 lg:mb-8'>
               {
                 [
                   "Menampilkan Zona Aman",
@@ -86,7 +96,16 @@ const Fitur = () => {
                 ][index]
               }
             </p>
-            <div className='flex space-x-6'>
+            <p className='text-white font-light font-sans lg:hidden mt-4 mb-8'>
+              {
+                [
+                  `Intan membantu Anda untuk berada di Zona Aman, dan menghindari tempat rawan penularan virus COVID-19`,
+                  `Intan memberikan langkah pencegahan yang sesuai berdasarkan riwayat kesehatan, dan check-up harian Anda`,
+                  `Dengan informasi pencegahan, penanganan, fasilitas kesehatan, dan fitur lainnya, Intan siap membantu Anda melawan COVID-19`,
+                ][index]
+              }
+            </p>
+            <div className='flex justify-center space-x-6'>
               <button
                 className='cursor-pointer focus:outline-none'
                 onClick={() => setIndex((prev) => (prev ? prev - 1 : 2))}
@@ -101,7 +120,7 @@ const Fitur = () => {
               </button>
             </div>
           </div>
-          <p className='w-56 text-white font-light ml-40 font-sans'>
+          <p className='w-56 text-white font-light lg:ml-40 font-sans hidden lg:block'>
             {
               [
                 `Intan membantu Anda untuk berada di Zona Aman, dan menghindari tempat rawan penularan virus COVID-19`,
