@@ -35,7 +35,7 @@ const Download = () => {
           </a>
           <a
             className='focus:outline-none'
-            href='https://coronaina.com'
+            href='https://app.indonesiabertahan.com'
             target='_blank'
           >
             <LiveApp height='3rem' width='7rem' />

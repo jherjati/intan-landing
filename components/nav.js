@@ -110,7 +110,7 @@ export default function Nav() {
           <div className='flex flex-row-reverse lg:flex-row justify-around w-full lg:w-auto mx-8 space-x-4'>
             <a
               className='focus:outline-none'
-              href='https://coronaina.com'
+              href='https://app.indonesiabertahan.com'
               target='_blank'
             >
               <LiveApp height='2.5rem' width='6rem' />
