@@ -24,7 +24,7 @@ const FiturMonitoring = () => {
 
       <div className='flex flex-col w-11/12 lg:w-1/4 text-center items-center lg:items-start lg:text-left my-6 lg:my-0'>
         <p className='text-lg text-white lg:text-blue-500 font-medium'>
-          Fitur Monitoring Coronaina
+          Fitur Monitoring Corona
         </p>
         <h5 className='text-4xl text-white lg:text-gray-800 my-1 font-semibold'>
           {
@@ -45,7 +45,7 @@ const FiturMonitoring = () => {
           }
         </p>
         <a
-          href='https://monitor.coronaina.com'
+          href='https://monitor.indonesiabertahan.com'
           target='_blank'
           className='my-button mt-8 font-sans text-white font-semibold h-12 w-64 text-center pt-3'
         >

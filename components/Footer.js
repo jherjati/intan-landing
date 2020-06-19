@@ -161,7 +161,7 @@ const Footer = () => {
           <a href='https://braga.co.id' target='_blank'>
             <img src='/Braga.svg' alt='braga' />
           </a>
-          <a href='https://monitor.coronaina.com' target='_blank'>
+          <a href='https://monitor.indonesiabertahan.com' target='_blank'>
             <img src='/Coronaina.svg' alt='coronaina' />
           </a>
         </div>

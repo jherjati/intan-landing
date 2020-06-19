@@ -6,7 +6,7 @@ const Monitoring = () => {
       id='Monitor-Corona'
       className='flex flex-col items-center text-center'
     >
-      <p className='text-lg text-blue-500 font-medium'>Monitoring Coronaina</p>
+      <p className='text-lg text-blue-500 font-medium'>Monitoring Corona</p>
       <h5 className='text-4xl text-gray-800 my-1 font-semibold'>
         Melihat Kasus Dalam Satu Sebaran Peta
       </h5>
